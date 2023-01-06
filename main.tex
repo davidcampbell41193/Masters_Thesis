@@ -1,0 +1,231 @@
+\documentclass[12pt,letterpaper]{report}
+\usepackage{authblk}
+%\title{Entanglement Stabilization: Dynamics in Quantum Systems}
+%\author{David Y Campbell}
+%\affil{Submitted in partial fulfillment of the requirements of the Commonwealth Honors	College	University of Massachusetts Lowell}
+%\author{Thesis Adviser: Dr. Nishant Agarwal, Dept. of Physics and Applied Physics; Committee Member: Dr. Archana Kamal, Dept. of Physics and Applied Physics}
+%\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{subfigure}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{physics}
+\usepackage{mathrsfs}
+\usepackage{pdfpages}
+\usepackage{cite}
+\usepackage[nottoc]{tocbibind}
+\usepackage{appendix}
+\usepackage{float}
+\usepackage{appendix}
+\usepackage{mathtools}
+\usepackage{tikz-cd}
+\usepackage{blkarray, bigstrut}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\tikzset{%
+  tipA/.tip={Triangle[angle=90:6pt]},
+  %tipB/.tip={Bar[sep]Square[open]}
+}
+\usepackage[FIGTOPCAP]{subfigure}
+\usetikzlibrary{decorations.pathmorphing,backgrounds,automata}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%\usepackage{subcaption}
+\newtheorem{theorem}{Theorem}
+\usepackage{amsthm}
+
+
+\newcommand{\sumj}{\sum_{j=1}^{N}}
+\newcommand{\suml}{\sum_{l=1}^{N}}
+\newcommand{\sumL}{\sum_{\lambda=L,R}}
+\newcommand{\dubsum}{\sum_{\lambda=L,R} \sum_{j=1}^{N}}
+\newcommand{\intw}{\int d\omega}
+\usepackage[left=1.5in, right=1.0in, top=1.0in, bottom=1.0in]{geometry}
+
+
+\graphicspath{ {./Images/} }
+
+\def\ba{\begin{eqnarray}}
+\def\ea{\end{eqnarray}}
+\def\bea{\begin{eqnarray}}
+\def\eea{\end{eqnarray}}
+\def\be{\begin{equation}}
+\def\bf{\end{equation}}
+\def\bs{\begin{split}}
+\def\es{\end{split}}
+\def\d{\mathrm{d}}
+\def\({\left(}
+\def\){\right)}
+\def\[{\left[}
+\def\]{\right]}
+\def\<{\left\langle}
+\def\>{\right\rangle}
+
+\newtheorem{thm}{Theorem}
+
+\def\tr{\textcolor{red}}
+\def\tb{\textcolor{blue}}
+\def\ul{\underline}
+\def\bcent{\begin{center}}
+\def\ecent{\end{center}}
+\def\nref[#1]{\(\ref{#1})}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\numberwithin{equation}{section}
+
+\linespread{1.6} 
+
+\begin{document}
+   \thispagestyle{empty}
+
+
+\vspace*{\fill}
+\begin{center}
+
+@2019 by David Campbell all rights reserved 
+\end{center}
+\vspace*{\fill}
+
+\clearpage
+
+\pagenumbering{roman}
+
+
+\clearpage
+%
+%---------------------------------------------------------------------
+\chapter*{\label{sec:abstract}Abstract}
+\setcounter{page}{4}
+%
+Quantum state engineering and control is a mainstay of any quantum information platform. The primary roadblock in preserving quantum states is the phenomenon of decoherence, which washes out quantum coherences due to inevitable coupling of quantum systems with uncontrolled degrees of freedom. For many years, the strategy behind fighting decoherence primarily relied on coming up with ways to isolate the quantum state (or system) of interest from the surrounding environment. In recent years, however, there has been a push to use dissipation as a resource instead, and wield it as an alternative to Hamiltonian engineering for controlling quantum dynamics. This view is justified by the ability to ``engineer" system-environment couplings such that the effective dissipation seen by the quantum system is modified. 
+%
+\par
+%
+In this thesis, we analyze dissipation engineering protocols that can stabilize entangled states of two or more qubits. The particular theoretical procedure employed to determine the engineered dissipation seen by the qubit system is adiabatic elimination, which is applicable when the environment degrees of freedom evolve on time scales much faster than those relevant for the system subspace. We use this formalism to calculate the fidelity and rate of stabilization of a Bell state, where the two qubits (a.k.a. Alice and Bob) are coupled purely via dissipation. We extend our studies to the case when combining such a dissipative interaction with a coherent qubit-qubit interaction renders the coupling between qubits directional. We show how such directionality is crucial to realize multipartite entanglement using a system of four qubits. Our studies are directly relevant to the widely-used paradigm of cavity- and circuit-quantum electrodynamics and can be extended to study entanglement dynamics in larger quantum networks.
+%
+%---------------------------------------------------------------------
+\chapter*{\label{sec:abstract}Acknowledgments}
+
+%
+First I would like to thank my advisor Prof. Archana Kamal for her support, encouragement, assistance, and patience when guiding me through this project. I would like to extend a special thanks to Prof. Nishant Argarwal for his assistance and guidance on side projects that help inspire this work. To my committee members, Prof. Viktor Podolskiy, and Prof. Jayant Kumar, thank you for your mentorship over the past couple years. 
+
+I would like to extend gratitude to my group members who collaborated with me on my research. They include, in no particular order, Alvin Kow, Emery Doucet, and Tristan Brown. I have had many insightful conversations with them.
+
+Finally, I would like to thank my parents for their support on this journey. Also for their patience/attention they gave me when I explained my work to them.
+
+%I would like to thank Emery for helping resolve the cognative disonance that arrose from the Quantum-Zeno paradox and backaction, as well as many other interesting conversations. I would like to thank Alvin for insightful conversations as well.
+
+\clearpage
+
+\tableofcontents
+\listoftables
+\listoffigures
+\clearpage
+\pagenumbering{arabic}
+
+% Introduction
+%---------------------------------------------------------------------
+\include{Introduction}
+
+% Chapter 1: Open Quantum Systems
+%---------------------------------------------------------------------
+\include{Chapter_1}
+
+% Chapter 2: Two Spin Bell State Stabilization
+%---------------------------------------------------------------------
+\include{Chapter_2}
+
+% Chapter 3: Four-Spin Four-Way Entanglement
+%-------------------------------------------------------------
+\include{Chapter_3}
+
+% Chapter 4: Conclusions
+%-------------------------------------------------------------
+\include{Conclusions}
+
+
+\appendix
+% Appendix
+%-------------------------------------------------------------
+\include{Appendix}
+
+%-------------------------------------------------------------
+
+%\begin{thebibliography}{9}
+
+%\bibitem{Quantum Noise}
+%Crispin Gardiner, and Peter Zoller. \textit{Quantum Noise}. (Springer 2nd ed. 2003)
+
+%\bibitem{Nazir} 
+%Ahsan Nazir. 
+%\textit{Lecture Notes on Open Quantum Systems}. 
+%University of Manchester.
+ 
+%\bibitem{Theory of Open Quantum Systems} 
+%Francesco Petruccione and Heinz-Peter Breuer. 
+%\textit{The Theory of Open Quantum Systems}.
+%(Oxford University Press, New York,
+%2007).
+
+%%\bibitem{Redfield Equation}
+%A. G. Redfield. 
+%\textit{On the Theory of Relaxation Process}
+%(IBM Journal January 1957)
+
+%\bibitem{Statistical Methods in Quantum Optics I}
+%Howard J. Carmichael. 
+%\textit{Statistical Methods in Quantum Optics 1}
+%(Springer, Berlin Heidelberg, 2002)
+
+%\bibitem{Statistical Methods in Quantum Optics II}
+%Howard J. Carmichael.
+%\textit{Statistical Methods in Quantum Optics II}
+%(Springer, Berlin Heidelberg, 2002)
+
+%\bibitem{Quantum Optics of Chiral Spin Networks}
+%Hannes Pichler, Tomás Ramos, Andrew J. Daley, and Peter Zoller
+%  Quantum Optics of Chiral Spin Networks. \textit{Phys. Rev. A.},  \textbf{91}, 042116 – Published 14 April 2015
+
+%\bibitem{Preparation of Entangled States by Quantum Markov Processes}
+%B. Kraus, H. P. Büchler, S. Diehl, A. Kantian, A. Micheli, and P. Zoller. Preparation of Entangled States by Quantum Markov Processes.
+%\textit{Phys. Rev. A} \textbf{78}, 042307 – Published 8 October 2008
+
+%\bibitem{Quantum Measurement and Control}
+%Gerard J. Milburn and Howard M. Wiseman. \textit{Quantum Measurement and Control}. (Cambridge University Press 2009)
+
+%\bibitem{Secret Loss of Unitarity}
+%I-Shang Yang. Secret loss of Unitarity due to the Classical Background \textit{Phys. Rev. D} \textbf{96}, 025005 – Published 12 July 2017
+
+%\bibitem{Entanglement Timescale}
+%I-Shang Yang. The Entanglement Timescale \textit{Phys. Rev. D}  \textbf{97}, 066008 – Published 12 March 2018
+
+%\bibitem{The Quantum Challenge}
+%The Quantum Challenge
+
+%\bibitem{High-fidelity dissipative engineering using parametric interactions}
+%E. Doucet, F. Reiter, L. Ranzani, and A. Kamal. \textit{High-fidelity dissipative engineering using parametric interactions.} (2018) [arXiv:1810.03631] 
+
+%\bibitem{Pap:Steady state entanglement of two superconducting qubits engineered by dissipation}
+%Florentin Reiter, L. Tornberg, G\"{o}ran Johansson, and Anders S. Sørensen. \textit{Steady state entanglement of two superconducting qubits engineered by dissipation}. \textit{Phys. Rev. A} \textbf{88}, 032317 – Published 16 September 2013
+
+%\end{thebibliography}
+
+
+\clearpage
+%\addcontentsline{toc}{section}{references}
+%\bibliographystyle{abbrv}
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+
+
+
+\end{document}

@@ -1,0 +1,428 @@
+%
+%ccccccccccccccccccccccccccccccccccccccccccccccc
+\chapter{Rotating Frames}\label{Rotating Frame}
+%ccccccccccccccccccccccccccccccccccccccccccccccc
+%
+Let us start with the Schrodinger equation in a stationary frame
+\begin{equation}\label{Stationary_Frame_Schrodinger_Equation}
+i \hbar \frac{d}{dt} \left| \Psi \> = H \left| \Psi \>.
+\end{equation}
+we desire to transform it into a rotating frmae using a unitary operator of the form
+\begin{equation}
+\hat{U} = \exp\left( i \hat{G} t / \hbar \right),
+\end{equation}
+with $\hat{G}$ clearly being self-adjoint. We now define the rotating state vector
+\begin{equation}\label{Rotating_Frame_State_Vector}
+| \tilde{\Psi} \rangle = \hat{U} \left| \Psi \>.
+\end{equation}
+We now need to find the  transformed Hamiltonian $\tilde{H}$ by constructing the Schrodinger Equation in a rotating frame. To this end, we substitute Eq. (\ref{Rotating_Frame_State_Vector}) in Eq. (\ref{Stationary_Frame_Schrodinger_Equation})
+\begin{eqnarray}\label{Tranforming_Into_Rotating_Frame}
+i\hbar \frac{d}{dt} \left( \hat{U}^\dagger | \tilde{\Psi} \rangle \right) & =& H \hat{U}^\dagger | \tilde{\Psi} \rangle \nonumber \\
+i\hbar \hat{U}^\dagger \frac{d}{dt} | \tilde{\Psi} \rangle  + i \hbar \frac{d\hat{U}^\dagger}{dt} | \tilde{\Psi_R} \rangle & = & H \hat{U}^\dagger | \tilde{\Psi} \rangle \nonumber \\
+\hat{U}^\dagger \left(i \hbar \frac{d}{dt} | \tilde{\Psi} \rangle \right) & = &  H \hat{U}^\dagger | \tilde{\Psi} \rangle - i \hbar \frac{d \hat{U}^\dagger}{dt} | \tilde{\Psi} \rangle \nonumber \\
+i \hbar \frac{d}{dt} | \tilde{\Psi} \rangle & = & \left( \hat{U} H \hat{U}^\dagger - i \hbar \hat{U}\frac{d \hat{U}^\dagger}{dt}  \right) | \tilde{\Psi} \rangle.
+\end{eqnarray}
+Comparing the Schrodinger Equation in a rotating frame 
+\begin{equation}
+i \hbar \frac{d}{dt} | \tilde{\Psi} \rangle = \tilde{H} | \tilde{\Psi} \rangle
+\end{equation}
+to Eq. (\ref{Tranforming_Into_Rotating_Frame}) we conclude that the rotating frame Hamiltonian is 
+\begin{equation}
+\tilde{H} =\hat{U} H \hat{U}^\dagger - i \hbar \hat{U}\frac{d \hat{U}^\dagger}{dt} =  \hat{U} H \hat{U}^\dagger - \hat{G}. 
+\end{equation}
+
+
+
+
+%
+%ccccccccccccccccccccccccccccccccccccccccccccccccc
+\chapter{Superoperator Algebra}\label{Super Operator Algebra}
+%ccccccccccccccccccccccccccccccccccccccccccccccc
+%
+Superoperators act on operators to produce new operators, just as operators act on vectors to produce new vectors. The key difference is that superoperators ``embrace" their arguments. How they are embraced is conveyed using a dot notation.
+\begin{equation}
+\left( a^{\dagger 2} b \bullet \right) \hat{O} \equiv a^{\dagger 2} b \hat{O} \qquad \left(a \bullet a^{\dagger} \right) \hat{O} \equiv a \hat{O} a^{\dagger} \qquad \left( \bullet b^{\dagger} b \right) \hat{O} \equiv \hat{O} b^{\dagger} b.
+\end{equation}
+
+Superoperator products are evaluated by substituting the superoperator, on the right, where the dot is, on the left.
+\begin{equation}
+ \left( a^{\dagger 2} \bullet \right) \left( b \bullet \right) = \left( a^{\dagger 2} b \bullet \right) \qquad \left( a \bullet \right)\left( \bullet a^{\dagger} \right) = \left( a \bullet a^{\dagger} \right) \qquad \left( \bullet b \right) \left( \bullet b^{\dagger} \right) = \left( \bullet b^{\dagger} b \right)
+\end{equation}
+It is also possible to work in the reverse direction and ``factorize" a superoperator into products.
+
+In general two superoperators do not commute. However, if every operators in a superoperators commutes with every operator in another superoperator then the superoperators commute. For example
+\begin{eqnarray}
+\left( a \bullet a^{\dagger} \right)\left( b \bullet b^{\dagger} \right) & = & \left( ab \bullet b^{\dagger} a^{\dagger} \right) = \left( b a \bullet a^{\dagger} b^{\dagger} \right) \nonumber \\
+& = & \left( b \bullet b^{\dagger} \right) \left( a \bullet a^{\dagger} \right).
+\end{eqnarray}
+
+Given a superoperators $S$, we associate with it a conjugate superoperator, $S^{\dagger}$. Consider
+\begin{equation}
+\left( S \hat{O} \right)^{\dagger} \equiv S^{\dagger} \hat{O}^{\dagger} = S^{\dagger} \hat{O}
+\end{equation}
+where the operator $\hat{O}$ is assumed to be hermitian because $\hat{O}$ will typically be a density operator. Consider the example
+\begin{eqnarray}
+\left( \left( a^{\dagger 2 } b \bullet \right) \hat{O} \right)^{\dagger} & = & \left( a^{\dagger 2 } b \hat{O} \right)^{\dagger} = \left( \hat{O}^{\dagger} b^{\dagger} a^{2} \right) \nonumber \\
+& = & \left( \bullet b^{\dagger} a^{2} \right) \hat{O}
+\end{eqnarray}
+thus
+\begin{equation}
+\left( a^{\dagger 2 } b \bullet \right)^{\dagger} = \left( \bullet b^{\dagger} a^2 \right).
+\end{equation} 
+We can write the above equation in the form
+\begin{equation}
+\left[ \left( a^{\dagger 2 } \bullet \right) \left( b \bullet \right) \right]^{\dagger} = \left[ \left( \bullet a^2 \right) \left( \bullet b^{\dagger} \right) \right]
+\end{equation}
+from which we conclude
+\begin{equation}\
+\left( S_1 S_2 \right)^{\dagger} = S_1^{\dagger} S_2^{\dagger}.
+\end{equation}
+Therefore the ordering of the superoperators does not change when the hermitian conjugate is taken.
+
+We now will move on to calculating commutators of superoperators. Consider
+\begin{eqnarray}
+\left[ \left( b \bullet b^{\dagger} \right) , \left( b \bullet \right) \right] =  \left( b \bullet b^{\dagger} \right) \left( b  \bullet \right) - \left( b \bullet \right) \left( b \bullet b^{\dagger} \right) = 0  \nonumber \\
+\end{eqnarray}
+and
+\begin{eqnarray}
+\left[ \left( b^{\dagger} b \bullet \right) , \left( b \bullet \right) \right] & = & \left( b^{\dagger} b \bullet \right)\left( b \bullet \right) - \left( b \bullet \right) \left( b^{\dagger} b \bullet \right) \nonumber \\
+& = & \left( b^{\dagger} b^2 \bullet \right) - \left( b b^{\dagger} b \bullet \right) \nonumber \\
+& = & \left( b^{\dagger} b \bullet - b b^{\dagger} \bullet \right) \left( b \bullet \right) \nonumber \\ 
+& = & - \left( b \bullet \right). \nonumber 
+\end{eqnarray}
+
+A time dependent operator of the form satisfies 
+\begin{equation}
+S'(t) \equiv e^{- \mathcal{L} t } S e^{ \mathcal{L} t }
+\end{equation}
+obey's the Heisenberg equation of motion
+\begin{equation}
+\frac{d}{d t } S'(t) = \left[ S', \mathcal{L} \right].
+\end{equation}
+We now will solve the equation of motion. Consider $\mathcal{L}= \kappa \left( 2 b \bullet b^{\dagger} - b^{\dagger} b \bullet - \bullet b^{\dagger} b \right)$ and $S'(0)=\left( b \bullet \right)$.
+\begin{eqnarray}
+\frac{d}{d t}\left( b \bullet \right)' & = & \kappa \left[ \left(b\bullet\right)', 2\left(b \bullet b^{\dagger} \right)' - \left( b^{\dagger} b \bullet \right)' - \left( \bullet b^{\dagger} b \right)' \right] \nonumber \\
+& = & - \kappa \left( b \bullet \right)'
+\end{eqnarray}
+which has a solution of the form
+\begin{equation}
+S'(t) = (b \bullet)' = e^{- \mathcal{L} t } \left( b \bullet \right) e^{ \mathcal{L} t}= e^{ - \kappa t }\left( b \bullet \right).
+\end{equation}
+This example is simple because the superoperator $\left( b \bullet \right)'$ does not couple to other superoperators. However, in the following example $\left( b^{\dagger} \bullet \right)$ couples to $\left( \bullet b^{\dagger} \right)$.
+\begin{eqnarray}
+\frac{d}{d t } \left( b^{\dagger} \bullet \right)' & = & \left[ \left( b^{\dagger} \bullet \right)' , 2 \left( b \bullet b^{\dagger} \right)' - \left( b^{\dagger} b \bullet \right)' - \left( \bullet b^{\dagger} b \right)' \right] \nonumber \\
+ & = & \kappa \left( b^{\dagger} \bullet \right)' - 2 \kappa \left( \bullet b^{\dagger} \right)' \\
+\frac{d }{d t } \left( \bullet b^{\dagger} \right) & = & \kappa \left[ \left( \bullet b^{\dagger} \right)', 2 \left( b \bullet b^{\dagger} \right)' - \left( b^{\dagger} b \bullet \right)' - \left( \bullet b^{\dagger} b \right)' \right] = - \kappa \left( \bullet b^{\dagger} \right)' 
+\end{eqnarray}
+The solution to equation Eq. (14) can be found by substituting $\left( \bullet b^{\dagger} \right)'=\left( \bullet b^{\dagger}\right)e^{-\kappa t}$. plugging in this solution into equation (13) the solution becomes
+\begin{equation}
+\left( b^{\dagger} \bullet \right)' = \left( \bullet b^{\dagger} \right) \left( e^{-\kappa t} - e^{\kappa t} \right) + \left( b^{\dagger} \bullet \right) e^{\kappa t}.
+\end{equation}
+
+
+%Evaluating commutator the equations of motion are
+%\begin{eqnarray}
+%\frac{d }{d t } \mathcal{R}_1'(t) & = & \frac{d}{d t}(b \bullet )' = [b \bullet , \mathcal{L}_R ] = \left( -i \Delta - \frac{\kappa}{2} \right) \left( b \bullet \right) \nonumber \\
+%\frac{d}{d t} \mathcal{R}_1'^{\dagger}(t) &=&  \frac{ d }{d t }\left( \bullet b^{\dagger} \right)' = [ \bullet b^{\dagger} , \mathcal{L}_R ] = \left( i \Delta - \frac{\kappa}{2} \right) \left(\bullet b^{\dagger} \right) \nonumber \\
+%\frac{d }{d t } \mathcal{R}_2'(t) & = & \frac{d }{d t} \left( b^{\dagger} \bullet \right) =  [b^{\dagger} \bullet , \mathcal{L}_R] = \left( i \Delta + \frac{\kappa}{2} \right) \left( b^{\dagger} \bullet \right) - \kappa \left( \bullet b^{\dagger} \right) \nonumber \\
+%\frac{d}{d t } \mathcal{R}_2'^{\dagger} (t)  & = & \frac{d}{dt }\left( \bullet b \right)' = \left( - i \Delta + \frac{\kappa}{2} \right) \left( \bullet b \right) - \kappa \left( b \bullet \right)  \nonumber
+%\end{eqnarray}
+
+
+\chapter{Parametric Interactions: Stabilizing Arbitray Bell States}
+
+Two spins coupled to a mutual cavity mode can in principle stabilize any of the following bell states
+\begin{eqnarray}
+\left| S \> & = &  \frac{1}{\sqrt{2}} \left( \left| g e \> - \left| e g\> \right) \nonumber \\
+\left| T \> & = &  \frac{1}{\sqrt{2}} \left( \left| g e \> + \left| e g\> \right) \nonumber \\
+\left| \Phi_- \> & = &  \frac{1}{\sqrt{2}} \left( \left| e e \> - \left| g g\> \right) \nonumber  \\
+\left| \Phi_+ \> & = &  \frac{1}{\sqrt{2}} \left( \left| e e \> + \left| g g\> \right) \nonumber 
+\end{eqnarray} 
+for a strong resonate drive. However, these states all belong to the null space of a different jump operator. For example, $(\sigma_1 - \sigma_2)|T\rangle = 0 $. Because there is a phase difference between $\sigma_1$ and $\sigma_2$ in the jump operator, there needs to be a phase difference between the couplings strength. That is $g_1 = - g_2 = g$, so $\frac{H_{SR}}{\hbar} = b^\dagger(g_1 \sigma_1 + g_2 \sigma_2 ) = g b^\dagger \left( \sigma_1 - \sigma_2\right)$.
+
+To stabilize the states $\left| \Phi_- \>$ the operator $\sigma_2 \longrightarrow \sigma_2^\dagger$, so $(\sigma_1 + \sigma_2^\dagger)| \Phi_- \rangle = 0 $. This means system-reservoir interaction Hamiltonian must have the form post RWA
+\begin{equation}\label{Phi_minus_Hamiltonian}
+\frac{H_{SR}'}{\hbar} \approx g_2 b^\dagger( \sigma_1 + \sigma_2^\dagger) + h.c. 
+\end{equation}
+The system-resvoir coupling for the second qubit has now becomes an amplification Hamiltonian.
+\begin{equation}
+H_{SR}^{(2)} \approx g_2 b^\dagger \sigma_2^\dagger + h.c.
+\end{equation}
+To get an amplification Hamiltonian from the lab frame Hamiltonian, Eq. (\ref{Two Quipt Pamametric Couplings}), the static coupling $g_2$ must become a ``parametric" time-dependent coupling. That is
+\begin{equation}
+    g_2 \rightarrow g_2(t) = g_2 e^{i \omega_{p2} t} + c.c.
+\end{equation}
+When we move into the rotating frame, as defined in Eq. (\ref{Equ:Rotating_Hamiltonian}), we pick the modulation frequencies to be the sum $\omega_{p2} = \omega_2 + \omega_c$. After RWA the resulting Hamiltonian is Eq. (\ref{Phi_minus_Hamiltonian}). To stabilize $|\Phi_+\rangle$ we make sure $g_1=-g_2 =g$ so the effective jump operator satisfies $(\sigma_1 - \sigma_2^\dagger)| \Phi_+ \rangle = 0$.
+
+\begin{table}\label{Bell State Table}
+\centering
+\begin{tabular}{c|c}
+\centering
+Bell State & Engineered Jump Operator \\
+\hline
+$\left| S \>$ & $\sigma_1 + \sigma_2$  \\
+$\left| T \>$ & $\sigma_1 - \sigma_2$  \\
+$\left| \Phi_- \>$  & $\sigma_1 + \sigma_2^\dagger$ \\
+$\left| \Phi_+ \>$  & $\sigma_1 - \sigma_2^\dagger$ 
+\end{tabular}
+\caption{Table of bell states with corresponding jump operator. One can easily verify that the bell state is part null space the corresponding jump operator.}
+\end{table}
+
+%\section{Spins Coupled to a Wave-Guide}
+
+%Consider the total Hamiltonian given by
+%\begin{equation}\label{H_tot}
+%H_{tot}=H_{sys} + H_{res} + H_{int}
+%\end{equation}
+%where
+%\begin{equation}
+%H_{sys}  =  \hbar \sum_{j=1}^{N} \left( - \delta_j \sigma_j^{\dagger} \sigma_j + \Omega \sigma_j + \Omega^* \sigma_j^{\dagger} \right) 
+%\end{equation}
+%\begin{equation}\label{H_bath}
+%H_{res}  = \sum_{\lambda=L,R} \int d\omega \; \hbar \omega b_{\lambda}^{\dagger}( \omega ) b_{\lambda}( \omega )
+%\end{equation}
+%\begin{equation} \label{H_int}
+%H_{int}  =  i \hbar \sum_{\lambda=L,R} \sum_{j=1}^{N} \int d \omega \sqrt{\frac{\gamma_{\lambda j }}{2 \pi }} b_{\lambda}^{\dagger}(\omega) \sigma_j e^{- i \left( \nu t + \omega x_j / v_\lambda \right)} + h.c.
+%\end{equation}
+%Defining a rotating frame $|\Psi_R\rangle = e^{i H_{res} t/\hbar } | \Psi \rangle$, that is moving into the interaction picture with respects to the bath Hamiltonian, the total Hamiltonian becomes
+%\begin{equation}
+%H_{tot}(t) = H_{sys} + e^{i H_{res} t/\hbar } H_{int} e^{- i H_{res} t/\hbar }.
+%\end{equation}
+%To evaluate the interaction term in the rotating frame the Baker-Hausdorff theorem along with the commutation relationship $[b_\lambda(\omega ) , b_{\lambda' } ( \omega ' ) ] = \delta_{\lambda \lambda'} \delta( \omega - \omega')$ can be used.  However this computation would be tedious so consider a simpler model where $H_B= \omega a^{\dagger} a$  and $H_I = ig \left( a^{\dagger} \sigma - a \sigma^{\dagger} \right)$. In the rotating frame the interaction becomes 
+%\begin{equation}
+%e^{ i H_B t } H_I e^{ - i H_B t } = ig \left( a^{\dagger} \sigma e^{i \omega t } - a \sigma^{\dagger} e^{-i \omega t } \right).
+%\end{equation}
+%Therefore in the rotating frame $a \rightarrow a^{- i \omega t }$ and $a^{\dagger} \rightarrow a^{\dagger} e^{i \omega t }$. Amusing that this prescription works in the continuous case the interaction Hamiltonian becomes
+%\begin{eqnarray}
+%H_{int}(t) & = & e^{i H_B t/\hbar } H_{int} e^{- i H_B t/\hbar } \nonumber \\
+%& = &  i \hbar \dubsum \int d \omega \sqrt{\frac{\gamma_{\lambda j }}{2 \pi }} b_{\lambda}^{\dagger}(\omega) \sigma_j e^{- i \left( \left[ \nu - \omega \right] t + \omega x_j / v_\lambda \right)} + h.c.
+%\end{eqnarray}
+%where $b_\lambda(\omega) \rightarrow b_\lambda(\omega)^{- i \omega t }$ and $b_\lambda^{\dagger}(\omega ) \rightarrow b_\lambda^{\dagger}(\omega) e^{i \omega t }$ Thus the total Hamiltonian is
+%\begin{equation} \label{H_tot_rot}
+%H_{tot}(t) = H_{sys} +  i \hbar \dubsum \int d \omega \sqrt{\frac{\gamma_{\lambda j }}{2 \pi }} b_{\lambda}^{\dagger}(\omega) \sigma_j e^{- i \left( \left[ \nu - \omega \right] t + \omega x_j / v_\lambda \right)} + h.c.
+%\end{equation}
+%
+%Defining time dependent operators for the bath as  $b_{\lambda} ( \omega , t ) = U^{\dagger}(t) b_{\lambda} (\omega) U(t)$ and $a( t ) = U^{\dagger}(t) a U(t)$ the Heisenberg Equation of can written as
+%\begin{eqnarray}
+%\dot{b}_{\lambda}(\omega, t) & = &U^{\dagger}(t)  [ b_{\lambda}(\omega) ,  H_{int}(t) ] U(t) \nonumber \\
+%\dot{a} & = & \frac{1}{i \hbar} U^{\dagger}(t) [ a , H_{tot}(t) ] U(t)
+%\end{eqnarray}
+%where the unitaries satisfy $\dot{U}(t)  =  \frac{1}{i \hbar} H_{tot}(t) U(t)$ and $\dot{U}^{\dagger}(t) = - \frac{1}{i \hbar} U^{\dagger} ( t ) H_{tot}(t) $. Taking the time derivatives
+%\begin{eqnarray}
+%\dot{b}_{\lambda}(\omega, t) & = & \frac{1}{i \hbar} U^{\dagger}(t)  [ b_{\lambda}(\omega) , H_{tot}(t) ] U(t) =  \frac{1}{i \hbar} U^{\dagger}(t)  [ b_{\lambda}(\omega) ,  H_{int}(t) ] U(t) \nonumber \\
+%& = & \sum_{\lambda'=R,L} \sum_{j=0}^N \int d \omega' \;  \sqrt{ \frac{\gamma_{\lambda' j } }{2 \pi } } U^{\dagger}(t) \underbrace{ [ b_\lambda(\omega) , b^{\dagger}_{\lambda'}( \omega') ] }_{\delta_{\lambda \lambda'} \delta( \omega - \omega') } \sigma_j U(t)e^{- i \left( \left[ \nu - \omega' \right] t + \omega' x_j / v_\lambda \right)} \nonumber \\
+%& = & \sum_{j = 0 }^N \sqrt{\frac{\gamma_{\lambda l } }{2 \pi}} \sigma_j(t) e^{- i \left( \left[ \nu - \omega \right] t + \omega x_j / v_\lambda \right)} \nonumber \\
+%\end{eqnarray}
+%where $\sigma_j(t) = U^{\dagger}(t) \sigma_j U(t)$.
+%The formal solution to this equation is
+%\begin{equation}
+%b_{ \lambda } ( \omega , t ) = b_{\lambda}(\omega) + \int_0^t ds \suml \sqrt{\frac{ \gamma_{\lambda l } }{2 \pi } } \sigma_l ( s ) e^{- i \left( \left[ \nu - \omega \right] s + \omega x_j / v_\lambda \right)}
+%\end{equation}
+%where the summation over $j$ has been replaced with a summation over $l$.
+%
+%Taking a time of system operator $a(t)$
+%\begin{eqnarray}
+%\dot{a}(t) & = &  \frac{1}{i \hbar} U^{\dagger}(t) [ A , H_{tot}(t) ] U(t) =  \frac{1}{i \hbar} U^{\dagger}(t) [ a , H_{sys} ] U(t) + \frac{1}{i \hbar} U^{\dagger}(t) [ a , H_{int}(t) ] U(t) \nonumber \\
+%& = & - \frac{i}{\hbar} [ a(t) , H_{sys}(t) ]  \nonumber \\
+%&+& \dubsum  \intw \sqrt{\frac{\gamma_{\lambda j }}{2 \pi }} \left( U^{\dagger}(t) b_{\lambda}^{\dagger}( \omega )[a , \sigma_j ] U(t)e^{  i ( ... )} - U^{\dagger}(t) b_\lambda(\omega) [ a , \sigma_j^\dagger ] U(t)e^{ -i ( ... ) } \right) \nonumber \\
+%& = & - \frac{i}{\hbar} [ a(t) , H_{sys}(t) ] \nonumber \\
+%& + & \dubsum  \intw \sqrt{\frac{\gamma_{\lambda j }}{2 \pi }} \left( b_{\lambda}^{\dagger}( \omega , t )[a(t) , \sigma_j(t) ]e^{ i ( ... )} - b_\lambda(\omega , t ) [ a(t) , \sigma_j^\dagger(t) ] e^{ - i ( ... ) } \right) \nonumber
+%\end{eqnarray}
+%where $g(t)=i ( \omega - \nu ) t - i \omega x_j/v_\lambda=i(\omega - \nu )(t - x_j / v_\lambda ) -  i \nu x_j / v_\lambda$. Substituting the formal solution into the above equation leads to
+%
+%\begin{align}
+%\dot{a}(t) &= - \frac{i}{\hbar}[ a(t) , H_{sys}(t) ]  \\
+%&\quad +  \dubsum \intw  \sqrt{\frac{\gamma_{\lambda j }}{2 \pi}} \left\lbrace [a(t) , \sigma_j(t) ]e^{i (...) }  \left[ b_{\lambda}^{\dagger}(\omega) + \int_0^t ds \suml \sqrt{\frac{ \gamma_{\lambda l } }{2 \pi } } \sigma_l^{\dagger} ( s ) e^{ i \left( \left[ \nu - \omega \right] s + \omega x_j / v_\lambda \right)}\right] \right]   .  \nonumber \\
+%  &\quad \left. -   [ a(t) , \sigma_j^{\dagger}(t) ]e^{ - i (...)} \left[b_{\lambda}(\omega) + \int_0^t ds \suml \sqrt{\frac{ \gamma_{\lambda l } }{2 \pi } } \sigma_l ( s ) e^{- i \left( \left[ \nu - \omega \right] s + \omega x_j / v_\lambda \right)} \right] \right\rbrace.  \nonumber 
+%\end{align}
+%Distributing $\intw$ and $e^{-i (.. )}$ then defining defined the quantum noise operators $b_\lambda(t) = \frac{1}{2 \pi }\int d \omega b_\lambda ( \omega ) e^{- i ( \omega - \nu ) t }$ then
+%\begin{eqnarray}
+%\intw b_\lambda( \omega ) e^{-i (...) } & = & e^{ i \nu x_j / v_\lambda }\intw b_{\lambda}^{\dagger} ( \omega ) e^{ - i \left( \omega - \nu \right) \left( t - x_j/v_\lambda\right) } = \sqrt{ 2 \pi }e^{  i k_\lambda x_j } b_{\lambda}^{\dagger}( t - x_j/v_\lambda).
+%\end{eqnarray}
+%Substituting this equation and its dagger on Eq (18)
+%\begin{align}
+%\dot{a}(t) &= - \frac{i}{\hbar}[ a(t) , H_{sys}(t) ]  \\
+%& \!\! \! \! \! \!  +  \dubsum  \sqrt{\frac{\gamma_{\lambda j }}{2 \pi}} \left\lbrace [a(t) , \sigma_j(t) ]\left[ \sqrt{2\pi } e^{-i k_\lambda x_j } b_{\lambda}^{\dagger}(t- x_j/v_\lambda) +  \int_0^t ds \intw \suml \sqrt{\frac{ \gamma_{\lambda l } }{2 \pi } } \sigma_l^{\dagger} ( s )e^{- i (...) }  e^{ i \left( \left[ \nu - \omega \right] s + \omega x_j / v_\lambda \right)}\right] \right. \nonumber \\
+%  &\quad \left. -   [ a(t) , \sigma_j^{\dagger}(t) ] \left[ \sqrt{2 \pi } e^{ i k_\lambda x_j } b_{\lambda}(t - x_j /v_\lambda) + \int_0^t ds \intw \suml \sqrt{\frac{ \gamma_{\lambda l } }{2 \pi } } \sigma_l ( s )e^{ i (...)} e^{- i \left( \left[ \nu - \omega \right] s + \omega x_j / v_\lambda \right)} \right] \right\rbrace.  \nonumber 
+%\end{align}
+%
+%%\begin{align}
+%%\dot{a}(t) &= - \frac{i}{\hbar}[ a(t) , H_{sys}(t) ]  \\
+%%&\quad +  \dubsum  \sqrt{\frac{\gamma_{\lambda j }}{2 \pi}}  \lbrace [ a(t) , \sigma_j(t) ] \left[ \underbrace{\intw b_{\lambda}^{\dagger} ( \omega ) e^{i \left( \omega - \nu \right) \left( t - x_j/v_\lambda\right) }e^{- i \nu x_j / v_\lambda }}_{= \sqrt{ 2 \pi } b_{\lambda}^{\dagger}( t - x_j/v_\lambda) e^{ - i k_\lambda x_j } }+ \intw \int_0^t ds \suml \sqrt{\frac{\gamma_{\lambda l}}{2 \pi}} \sigma_l^{\dagger} e^{ - i (...) } \right] \nonumber \\
+%%  &\quad -   \dubsum  \sqrt{\frac{\gamma_{\lambda j }}{2 \pi}} [ a(t) , \sigma_j^{\dagger}(t) ] \left[\underbrace{\intw b_{\lambda} ( \omega ) e^{- i \left( \omega - \nu \right) \left( t - x_j/v_\lambda \right) }e^{ i \nu x_j / v_\lambda }}_{= \sqrt{ 2 \pi } b_{\lambda}( t - x_j/v_\lambda) e^{  i k_\lambda x_j } } + \intw \int_0^t ds \suml \sqrt{\frac{\gamma_{\lambda l}}{2 \pi}} \sigma_l e^{i(...)  } \right]. \nonumber 
+%%\end{align}
+%%where $(...)=( \omega - \nu ) ( t - s ) - i \omega \frac{x_{j l}}{v_\lambda}$. We have defined the quantum noise operators $b_\lambda = \frac{1}{2 \pi }\int d \omega b_\lambda ( \omega ) e^{- i ( \omega - \nu ) t }$.  Let us now rewrite this equation
+%%\begin{eqnarray} \label{pre_markov_ME}
+%%\dot{a}(t) = - \frac{i}{\hbar}[ a(t) , H_{sys}(t) ]  \\
+%%+\dubsum \sqrt{\gamma_{\lambda j }} \left( b_\lambda^{\dagger}( t - x_j /v_\lambda ) [a(t) , \sigma_j(t) ]e^{- i k_\lambda x_j } - b_\lambda( t - x_j / v_\lambda ) [a(t) , \sigma_j^{\dagger}(t) ]e^{i k_\lambda x_j} \right) \nonumber \\
+%%+ \dubsum \suml  \frac{\sqrt{\gamma_{\lambda j } \gamma_{\lambda l }} }{2 \pi } \intw \int_0^t ds \left[ ^{i ( \omega - \nu )(t - s ) - 0 \omega x_{ j l } / v_\lambda } \sigma_l^{\dagger} [a(t) , \sigma_j(t) ] - e^{- i (\omega - \nu )( t- s ) + i \omega x_{jl }/v_\lambda} [a(t) , \sigma_j^{\dagger} ( t ) ]\sigma_l ( s) \right] \nonumber 
+%%\end{eqnarray}
+%
+%\subsection{Born-Markov Approximation}
+%
+%We assume that the timescales on which system operators evolve are much longer than the correlation time of the bath $\tau \sim 1/\theta$. This is the essence of the Markov approximation, which allows us to preform the integrals over $\omega$ and $s$. Assume that $\Omega_j$, $\delta_j$, $\gamma_{\lambda j} \ll \theta \ll \nu$. Therefore 
+%\begin{eqnarray}
+%\sum_l \sqrt{ \gamma_{ \lambda l }} \int_0^t ds \int_{\nu - \theta}^{\nu + \theta} d \omega \frac{1}{2 \pi} e^{(\omega - \nu)(t - s) - \omega x_{jl}/v_{\lambda}}\sigma_l^\dagger(s) = \sum_l \sqrt{\lambda l} \int_0^t ds e^{- i \nu t + i \nu s } \sigma_l^{\dagger}(s) \int_{\nu - \theta}^{\nu + \theta} \frac{d \omega}{2 \pi} e^{i(t - s - x_{jl}/v_\lambda)\omega} \nonumber \\
+%= \sum_l \sqrt{ \gamma_{\lambda l}} \int_0^t ds e^{- i \nu t + i \nu s } \sigma_l^{\dagger}(s)\frac{e^{i(t - s - x_{jl}/v_\lambda)\nu}}{2 \pi i(t - s - x_{jl}/v_\lambda)}\left( e^{i(t - s - x_{jl}/v_\lambda)\theta} - e^{-i(t - s - x_{jl}/v_\lambda)\theta} \right) \nonumber \\
+%=  \sum_l \sqrt{\gamma_{\lambda l}} \int_0^t ds e^{-i k_\lambda \nu} \sigma_l^{\dagger}(s) \frac{\sin(t - s - x_{jl}/v_\lambda)\theta}{\pi (t - s - x_{jl}/v_\lambda)} = \sum_l \sqrt{\gamma_{\lambda l}} \int_0^t ds e^{-i k_\lambda \nu} \sigma_l^{\dagger}(s) \delta(t - s - x_{jl}/v_\lambda ) \nonumber \\
+%=  \sum_l \sqrt{\gamma_{\lambda l }} \theta( x_{jl} /v_\lambda ) e^{- i k_\lambda x_{jl} } \sigma_l^{\dagger}(t - x_{jl} / v_\lambda ) \nonumber
+%\end{eqnarray}
+%Let us now consider $j=l$, then the upper integration bound ends at the delta peek so we introduced a factor of a half.
+%
+%\begin{equation}
+%\sum_l \sqrt{\gamma_{\lambda l}} \int_0^t ds \int_{\nu - \theta}^{\nu + \theta} d \omega \frac{1}{2 \pi} e^{(\omega - \nu)(t - s) - \omega x_{jl}/v_{\lambda}}\sigma_l^\dagger(s) = \frac{\sqrt{\gamma_{\lambda j }}}{2}\sigma_j^{\dagger}( t) + \sum_{l=0}^{N} \sqrt{\gamma_{\lambda l}} \theta( x_{jl} /v_\lambda ) e^{- i k_\lambda x_{jl} } \sigma_l^{\dagger}(t - x_{jl} / v_\lambda )
+%\end{equation}
+%Next retardation effects will be neglected so $\sigma_l( t - x_{jl}/ v_\lambda ) \approx \sigma_l(t) $. This approximation is justified $|\Omega_j| , |\delta_J| , \gamma_{\lambda j}\ll |v_\lambda / x{jl}| $, that is, if time scales for which system operators evolve are msuch slower that the time photons need to propagate through the waveguide.
+%
+%Given that $\theta( x ) = 1$ for $x > 0$ and $\theta( x ) = 0 $  for $x \le 0$. Let us now contemplate what $\theta(x_{jl}/v_\lambda)$ means physical. If we are considering the right propagating modes that is $v_R>0$. Then then the location of qubit $j$ necessarily have to be on the right of qubit $l$. And if we are considering a left propagating modes then then the location of qubit $l$ needs to be to the left of qubit $j$. Therefore we can write this markov approximation as
+%\begin{equation}
+%\sum_l  \sqrt{\gamma_{\lambda l}} \int_0^t ds \int_{\nu - \theta}^{\nu + \theta} d \omega \frac{1}{2 \pi} e^{(\omega - \nu)(t - s) - \omega x_{jl}/v_{\lambda}}\sigma_l^\dagger(s) = \frac{\gamma_{\lambda j }}{2}\sigma_j^{\dagger}( t) + \sum_{ \substack{ l=0 \\ x_j k_\lambda > x_l k_\lambda } }^{N} 
+%	e^{- i k_\lambda x_{jl} } \sigma_l^{\dagger}(t - x_{jl} / v_\lambda )
+%\end{equation}
+%
+%Substituting the Markov approximation into the Eq. (\ref{pre_markov_ME})
+%
+%\begin{align} \label{post_markov_ME}
+%\dot{a}(t) & = - \frac{i}{\hbar}[ a(t) , H_{sys}(t) ]  
+%+ \dubsum \sqrt{\gamma_{\lambda j }} \left( b_\lambda^{\dagger}( t - x_j /v_\lambda ) [a(t) , \sigma_j(t) ]e^{- i k_\lambda x_j } - b_\lambda( t - x_j / v_\lambda ) [a(t) , \sigma_j^{\dagger}(t) ]e^{i k_\lambda x_j} \right) \\
+%&\quad \dubsum  \sqrt{\gamma_{\lambda j }} \left( \frac{\sqrt{\gamma_{\lambda j }}}{2}\sigma_j^{\dagger}( t) + \sum_{ \substack{ l=0 \\ x_j k_\lambda > x_l k_\lambda } }^{N} 
+%\sqrt{\gamma_{\lambda l }} e^{- i k_\lambda x_{jl} } \sigma_l^{\dagger}(t - x_{jl} / v_\lambda ) \right)
+%\end{align}
+
+
+%\subsection{Moving the Time Dependence}
+%When the Born-Marokov Approximation is substituted into the equation of motion of a(t)
+%
+%ccccccccccccccccccccccccccccccccccccccccccccccc
+
+%\chapter{Spins Coupled to a Wave Guide}
+%%%ccccccccccccccccccccccccccccccccccccccccccccccc
+%%%
+%We consider the total Hamiltonian given by
+%\begin{equation}\label{H_tot}
+%H_{tot}=H_{sys} + H_{res} + H_{int}
+%\end{equation}
+%where
+%\begin{equation}
+%H_{sys}  =  \hbar \sum_{j=1}^{N} \left( - \delta_j \sigma_j^{\dagger} \sigma_j + \Omega \sigma_j + \Omega^* \sigma_j^{\dagger} \right) 
+%\end{equation}
+%\begin{equation}\label{H_bath}
+%H_{res}  = \sum_{\lambda=L,R} \int d\omega \; \hbar \omega b_{\lambda}^{\dagger}( \omega ) b_{\lambda}( \omega )
+%\end{equation}
+%\begin{equation} \label{H_int}
+%H_{int}  =  i \hbar \sum_{\lambda=L,R} \sum_{j=1}^{N} \int d \omega \sqrt{\frac{\gamma_{\lambda j }}{2 \pi }} b_{\lambda}^{\dagger}(\omega) \sigma_j e^{- i \left( \nu t + \omega x_j / v_\lambda \right)} + h.c.
+%\end{equation}
+%This Hamiltonian describes spins couples to wave guide that have both right and left propagating modes that spin excitations can decay into.
+%
+%We defining a rotating frame $|\Psi_R\rangle = e^{i H_{res} t/\hbar } | \Psi \rangle$, because we are not intersted in the free evolution of the reservoir. 
+%\begin{equation}
+%H_{tot}(t) = H_{sys} + e^{i H_{res} t/\hbar } H_{int} e^{- i H_{res} t/\hbar }.
+%\end{equation}
+%To evaluate the interaction term in the rotating frame the Baker-Hausdorff theorem along with the commutation relationship $[b_\lambda(\omega ) , b_{\lambda' } ( \omega ' ) ] = \delta_{\lambda \lambda'} \delta( \omega - \omega')$ can be used.  However this computation would be tedious so consider a simpler model where $H_B= \omega a^{\dagger} a$  and $H_I = ig \left( a^{\dagger} \sigma - a \sigma^{\dagger} \right)$. In the rotating frame the interaction becomes 
+%\begin{equation}
+%e^{ i H_B t } H_I e^{ - i H_B t } = ig \left( a^{\dagger} \sigma e^{i \omega t } - a \sigma^{\dagger} e^{-i \omega t } \right).
+%\end{equation}
+%Therefore in the rotating frame $a \rightarrow a^{- i \omega t }$ and $a^{\dagger} \rightarrow a^{\dagger} e^{i \omega t }$. Amusing that this prescription works in the continuous case the interaction Hamiltonian becomes
+%\begin{eqnarray}
+%H_{int}(t) & = & e^{i H_B t/\hbar } H_{int} e^{- i H_B t/\hbar } \nonumber \\
+%& = &  i \hbar \dubsum \int d \omega \sqrt{\frac{\gamma_{\lambda j }}{2 \pi }} b_{\lambda}^{\dagger}(\omega) \sigma_j e^{- i \left( \left[ \nu - \omega \right] t + \omega x_j / v_\lambda \right)} + h.c.
+%\end{eqnarray}
+%where $b_\lambda(\omega) \rightarrow b_\lambda(\omega)^{- i \omega t }$ and $b_\lambda^{\dagger}(\omega ) \rightarrow b_\lambda^{\dagger}(\omega) e^{i \omega t }$ Thus the total Hamiltonian is
+%\begin{equation} \label{H_tot_rot}
+%H_{tot}(t) = H_{sys} +  i \hbar \dubsum \int d \omega \sqrt{\frac{\gamma_{\lambda j }}{2 \pi }} b_{\lambda}^{\dagger}(\omega) \sigma_j e^{- i \left( \left[ \nu - \omega \right] t + \omega x_j / v_\lambda \right)} + h.c.
+%\end{equation}
+%
+%Defining time dependent operators for the bath as  $b_{\lambda} ( \omega , t ) = U^{\dagger}(t) b_{\lambda} (\omega) U(t)$ and $a( t ) = U^{\dagger}(t) a U(t)$ the Heisenberg Equation of can written as
+%\begin{eqnarray}
+%\dot{b}_{\lambda}(\omega, t) & = &U^{\dagger}(t)  [ b_{\lambda}(\omega) ,  H_{int}(t) ] U(t) \nonumber \\
+%\dot{a} & = & \frac{1}{i \hbar} U^{\dagger}(t) [ a , H_{tot}(t) ] U(t)
+%\end{eqnarray}
+%where the unitaries satisfy $\dot{U}(t)  =  \frac{1}{i \hbar} H_{tot}(t) U(t)$ and $\dot{U}^{\dagger}(t) = - \frac{1}{i \hbar} U^{\dagger} ( t ) H_{tot}(t) $. Taking the time derivatives
+%\begin{eqnarray}
+%\dot{b}_{\lambda}(\omega, t) & = & \frac{1}{i \hbar} U^{\dagger}(t)  [ b_{\lambda}(\omega) , H_{tot}(t) ] U(t) =  \frac{1}{i \hbar} U^{\dagger}(t)  [ b_{\lambda}(\omega) ,  H_{int}(t) ] U(t) \nonumber \\
+%& = & \sum_{\lambda'=R,L} \sum_{j=0}^N \int d \omega' \;  \sqrt{ \frac{\gamma_{\lambda' j } }{2 \pi } } U^{\dagger}(t) \underbrace{ [ b_\lambda(\omega) , b^{\dagger}_{\lambda'}( \omega') ] }_{\delta_{\lambda \lambda'} \delta( \omega - \omega') } \sigma_j U(t)e^{- i \left( \left[ \nu - \omega' \right] t + \omega' x_j / v_\lambda \right)} \nonumber \\
+%& = & \sum_{j = 0 }^N \sqrt{\frac{\gamma_{\lambda l } }{2 \pi}} \sigma_j(t) e^{- i \left( \left[ \nu - \omega \right] t + \omega x_j / v_\lambda \right)} \nonumber \\
+
+%\end{eqnarray}
+%where $\sigma_j(t) = U^{\dagger}(t) \sigma_j U(t)$.
+%The formal solution to this equation is
+%\begin{equation}
+%b_{ \lambda } ( \omega , t ) = b_{\lambda}(\omega) + \int_0^t ds \suml \sqrt{\frac{ \gamma_{\lambda l } }{2 \pi } } \sigma_l ( s ) e^{- i \left( \left[ \nu - \omega \right] s + \omega x_j / v_\lambda \right)}
+%\end{equation}
+%where the summation over $j$ has been replaced with a summation over $l$.
+%
+%Taking a time of system operator $a(t)$
+%\begin{eqnarray}
+%\dot{a}(t) & = &  \frac{1}{i \hbar} U^{\dagger}(t) [ A , H_{tot}(t) ] U(t) =  \frac{1}{i \hbar} U^{\dagger}(t) [ a , H_{sys} ] U(t) + \frac{1}{i \hbar} U^{\dagger}(t) [ a , H_{int}(t) ] U(t) \nonumber \\
+%& = & - \frac{i}{\hbar} [ a(t) , H_{sys}(t) ]  \nonumber \\
+%&+& \dubsum  \intw \sqrt{\frac{\gamma_{\lambda j }}{2 \pi }} \left( U^{\dagger}(t) b_{\lambda}^{\dagger}( \omega )[a , \sigma_j ] U(t)e^{  i ( ... )} - U^{\dagger}(t) b_\lambda(\omega) [ a , \sigma_j^\dagger ] U(t)e^{ -i ( ... ) } \right) \nonumber \\
+%& = & - \frac{i}{\hbar} [ a(t) , H_{sys}(t) ] \nonumber \\
+%& + & \dubsum  \intw \sqrt{\frac{\gamma_{\lambda j }}{2 \pi }} \left( b_{\lambda}^{\dagger}( \omega , t )[a(t) , \sigma_j(t) ]e^{ i ( ... )} - b_\lambda(\omega , t ) [ a(t) , \sigma_j^\dagger(t) ] e^{ - i ( ... ) } \right) \nonumber
+%\end{eqnarray}
+%where $g(t)=i ( \omega - \nu ) t - i \omega x_j/v_\lambda=i(\omega - \nu )(t - x_j / v_\lambda ) -  i \nu x_j / v_\lambda$. Substituting the formal solution into the above equation leads to
+%
+%\begin{align}
+%\dot{a}(t) &= - \frac{i}{\hbar}[ a(t) , H_{sys}(t) ] +  \dubsum \intw  \sqrt{\frac{\gamma_{\lambda j }}{2 \pi}} \nonumber \\
+%& \quad \times \Bigg\lbrace [a(t) , \sigma_j(t) ]e^{i (...) }  \bigg[ [ b_{\lambda}^{\dagger}(\omega) + \int_0^t ds \suml \sqrt{\frac{ \gamma_{\lambda l } }{2 \pi } } \sigma_l^{\dagger} ( s ) e^{ i \left( \left[ \nu - \omega \right] s + \omega x_j / v_\lambda \right)}\bigg]  \nonumber \\
+%  &\quad - [ a(t) , \sigma_j^{\dagger}(t) ]e^{ - i (...)} \bigg[b_{\lambda}(\omega) + \int_0^t ds \suml \sqrt{\frac{ \gamma_{\lambda l } }{2 \pi } } \sigma_l ( s ) e^{- i \left( \left[ \nu - \omega \right] s + \omega x_j / v_\lambda \right)} \bigg] \Bigg\rbrace.  \nonumber 
+%\end{align}
+%Distributing $\intw$ and $e^{-i (.. )}$ then defining defined the quantum noise operators $b_\lambda(t) = \frac{1}{2 \pi }\int d \omega b_\lambda ( \omega ) e^{- i ( \omega - \nu ) t }$ then
+%\begin{align}
+%\intw b_\lambda( \omega ) e^{-i (...) } = e^{ i \nu x_j / v_\lambda }\intw b_{\lambda}^{\dagger} ( \omega ) e^{ - i \left( \omega - \nu \right) \left( t - x_j/v_\lambda\right) } = \sqrt{ 2 \pi }e^{  i k_\lambda x_j } b_{\lambda}^{\dagger}( t - x_j/v_\lambda) \nonumber.
+%\end{align}
+%Substituting this equation and its dagger on Eq (18)
+%\begin{align}
+%\dot{a}(t) &= - \frac{i}{\hbar}[ a(t) , H_{sys}(t) ] \quad  +  \dubsum  \sqrt{\frac{\gamma_{\lambda j }}{2 \pi}} \nonumber \\
+%& \quad \times \Bigg\lbrace [a(t) , \sigma_j(t) ]\bigg[ \sqrt{2\pi } e^{-i k_\lambda x_j } b_{\lambda}^{\dagger}(t- x_j/v_\lambda) \nonumber \\
+%& \qquad \qquad \qquad  +  \int_0^t ds \intw \suml \sqrt{\frac{ \gamma_{\lambda l } }{2 \pi } } \sigma_l^{\dagger} ( s )e^{- i (...) }  e^{ i \left( \left[ \nu - \omega \right] s + \omega x_j / v_\lambda \right)}\bigg]  \nonumber \\
+%  &\quad - [ a(t) , \sigma_j^{\dagger}(t) ] \bigg[ \sqrt{2 \pi } e^{ i k_\lambda x_j } b_{\lambda}(t - x_j /v_\lambda) \nonumber \\
+%  & \qquad \qquad \qquad  + \int_0^t ds \intw \suml \sqrt{\frac{ \gamma_{\lambda l } }{2 \pi } } \sigma_l ( s )e^{ i (...)} e^{- i \left( \left[ \nu - \omega \right] s + \omega x_j / v_\lambda \right)} \bigg] \Bigg\rbrace.  \nonumber 
+%\end{align}
+%
+%%\begin{align}
+%%\dot{a}(t) &= - \frac{i}{\hbar}[ a(t) , H_{sys}(t) ]  \\
+%%&\quad +  \dubsum  \sqrt{\frac{\gamma_{\lambda j }}{2 \pi}}  \lbrace [ a(t) , \sigma_j(t) ] \left[ \underbrace{\intw b_{\lambda}^{\dagger} ( \omega ) e^{i \left( \omega - \nu \right) \left( t - x_j/v_\lambda\right) }e^{- i \nu x_j / v_\lambda }}_{= \sqrt{ 2 \pi } b_{\lambda}^{\dagger}( t - x_j/v_\lambda) e^{ - i k_\lambda x_j } }+ \intw \int_0^t ds \suml \sqrt{\frac{\gamma_{\lambda l}}{2 \pi}} \sigma_l^{\dagger} e^{ - i (...) } \right] \nonumber \\
+%%  &\quad -   \dubsum  \sqrt{\frac{\gamma_{\lambda j }}{2 \pi}} [ a(t) , \sigma_j^{\dagger}(t) ] \left[\underbrace{\intw b_{\lambda} ( \omega ) e^{- i \left( \omega - \nu \right) \left( t - x_j/v_\lambda \right) }e^{ i \nu x_j / v_\lambda }}_{= \sqrt{ 2 \pi } b_{\lambda}( t - x_j/v_\lambda) e^{  i k_\lambda x_j } } + \intw \int_0^t ds \suml \sqrt{\frac{\gamma_{\lambda l}}{2 \pi}} \sigma_l e^{i(...)  } \right]. \nonumber 
+%%\end{align}
+%%where $(...)=( \omega - \nu ) ( t - s ) - i \omega \frac{x_{j l}}{v_\lambda}$. We have defined the quantum noise operators $b_\lambda = \frac{1}{2 \pi }\int d \omega b_\lambda ( \omega ) e^{- i ( \omega - \nu ) t }$.  Let us now rewrite this equation
+%%\begin{eqnarray} \label{pre_markov_ME}
+%%\dot{a}(t) = - \frac{i}{\hbar}[ a(t) , H_{sys}(t) ]  \\
+%%+\dubsum \sqrt{\gamma_{\lambda j }} \left( b_\lambda^{\dagger}( t - x_j /v_\lambda ) [a(t) , \sigma_j(t) ]e^{- i k_\lambda x_j } - b_\lambda( t - x_j / v_\lambda ) [a(t) , \sigma_j^{\dagger}(t) ]e^{i k_\lambda x_j} \right) \nonumber \\
+%%+ \dubsum \suml  \frac{\sqrt{\gamma_{\lambda j } \gamma_{\lambda l }} }{2 \pi } \intw \int_0^t ds \left[ ^{i ( \omega - \nu )(t - s ) - 0 \omega x_{ j l } / v_\lambda } \sigma_l^{\dagger} [a(t) , \sigma_j(t) ] - e^{- i (\omega - \nu )( t- s ) + i \omega x_{jl }/v_\lambda} [a(t) , \sigma_j^{\dagger} ( t ) ]\sigma_l ( s) \right] \nonumber 
+%%\end{eqnarray}
+%
+%\section{Born-Markov Approximation}
+%
+%We assume that the timescales on which system operators evolve are much longer than the correlation time of the bath $\tau \sim 1/\theta$. This is the essence of the Markov approximation, which allows us to preform the integrals over $\omega$ and $s$. Assume that $\Omega_j$, $\delta_j$, $\gamma_{\lambda j} \ll \theta \ll \nu$. Therefore 
+%\begin{align}
+%\sum_l \sqrt{ \gamma_{ \lambda l }} \int_0^t ds \int_{\nu - \theta}^{\nu + \theta} d \omega \; \frac{1}{2 \pi} e^{(\omega - \nu)(t - s) - \omega x_{jl}/v_{\lambda}}\sigma_l^\dagger(s) \nonumber \\
+% = \sum_l \sqrt{\lambda l} \int_0^t ds e^{- i \nu t + i \nu s } \sigma_l^{\dagger}(s) \int_{\nu - \theta}^{\nu + \theta} \frac{d \omega}{2 \pi} e^{i(t - s - x_{jl}/v_\lambda)\omega} \nonumber 
+%%= \sum_l \sqrt{ \gamma_{\lambda l}} \int_0^t ds e^{- i \nu t + i \nu s } \sigma_l^{\dagger}(s)\frac{e^{i(t - s - x_{jl}/v_\lambda)\nu}}{2 \pi i(t - s - x_{jl}/v_\lambda)}\left( e^{i(t - s - x_{jl}/v_\lambda)\theta} - e^{-i(t - s - x_{jl}/v_\lambda)\theta} \right) \nonumber \\
+%%=  \sum_l \sqrt{\gamma_{\lambda l}} \int_0^t ds e^{-i k_\lambda \nu} \sigma_l^{\dagger}(s) \frac{\sin(t - s - x_{jl}/v_\lambda)\theta}{\pi (t - s - x_{jl}/v_\lambda)} = \sum_l \sqrt{\gamma_{\lambda l}} \int_0^t ds e^{-i k_\lambda \nu} \sigma_l^{\dagger}(s) \delta(t - s - x_{jl}/v_\lambda ) \nonumber \\
+%%=  \sum_l \sqrt{\gamma_{\lambda l }} \theta( x_{jl} /v_\lambda ) e^{- i k_\lambda x_{jl} } \sigma_l^{\dagger}(t - x_{jl} / v_\lambda ) \nonumber
+%\end{align}
+%Let us now consider $j=l$, then the upper integration bound ends at the delta peek so we introduced a factor of a half.
+%
+%\begin{equation}
+%\sum_l \sqrt{\gamma_{\lambda l}} \int_0^t ds \int_{\nu - \theta}^{\nu + \theta} d \omega \frac{1}{2 \pi} e^{(\omega - \nu)(t - s) - \omega x_{jl}/v_{\lambda}}\sigma_l^\dagger(s) = \frac{\sqrt{\gamma_{\lambda j }}}{2}\sigma_j^{\dagger}( t) + \sum_{l=0}^{N} \sqrt{\gamma_{\lambda l}} \theta( x_{jl} /v_\lambda ) e^{- i k_\lambda x_{jl} } \sigma_l^{\dagger}(t - x_{jl} / v_\lambda )
+%\end{equation}
+%Next retardation effects will be neglected so $\sigma_l( t - x_{jl}/ v_\lambda ) \approx \sigma_l(t) $. This approximation is justified $|\Omega_j| , |\delta_J| , \gamma_{\lambda j}\ll |v_\lambda / x{jl}| $, that is, if time scales for which system operators evolve are msuch slower that the time photons need to propagate through the waveguide.
+%
+%Given that $\theta( x ) = 1$ for $x > 0$ and $\theta( x ) = 0 $  for $x \le 0$. Let us now contemplate what $\theta(x_{jl}/v_\lambda)$ means physical. If we are considering the right propagating modes that is $v_R>0$. Then then the location of qubit $j$ necessarily have to be on the right of qubit $l$. And if we are considering a left propagating modes then then the location of qubit $l$ needs to be to the left of qubit $j$. Therefore we can write this markov approximation as
+%\begin{equation}
+%\sum_l  \sqrt{\gamma_{\lambda l}} \int_0^t ds \int_{\nu - \theta}^{\nu + \theta} d \omega \frac{1}{2 \pi} e^{(\omega - \nu)(t - s) - \omega x_{jl}/v_{\lambda}}\sigma_l^\dagger(s) = \frac{\gamma_{\lambda j }}{2}\sigma_j^{\dagger}( t) + \sum_{ \substack{ l=0 \\ x_j k_\lambda > x_l k_\lambda } }^{N} 
+%	e^{- i k_\lambda x_{jl} } \sigma_l^{\dagger}(t - x_{jl} / v_\lambda )
+%\end{equation}
+%
+%Substituting the Markov approximation into the Eq. (\ref{pre_markov_ME})
+%
+%\begin{align} \label{post_markov_ME}
+%\dot{a}(t) & = - \frac{i}{\hbar}[ a(t) , H_{sys}(t) ]  
+%+ \dubsum \sqrt{\gamma_{\lambda j }} \left( b_\lambda^{\dagger}( t - x_j /v_\lambda ) [a(t) , \sigma_j(t) ]e^{- i k_\lambda x_j } - b_\lambda( t - x_j / v_\lambda ) [a(t) , \sigma_j^{\dagger}(t) ]e^{i k_\lambda x_j} \right) \\
+%&\quad \dubsum  \sqrt{\gamma_{\lambda j }} \left( \frac{\sqrt{\gamma_{\lambda j }}}{2}\sigma_j^{\dagger}( t) + \sum_{ \substack{ l=0 \\ x_j k_\lambda > x_l k_\lambda } }^{N} 
+%\sqrt{\gamma_{\lambda l }} e^{- i k_\lambda x_{jl} } \sigma_l^{\dagger}(t - x_{jl} / v_\lambda ) \right)
+%\end{align}
+%
+%
+%\section{Moving the Time Dependence}
+%When the Born-Marokov Approximation is substituted into the equation of motion of a(t)
